@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Manager">
+      <UniqueIdentifier>{e7bc6609-cbbb-4f60-a05b-8766f27c469e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Combat">
+      <UniqueIdentifier>{f9326b1c-fd32-4f71-afd1-ca54dfacd65c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Combat\Scene">
+      <UniqueIdentifier>{475cbfb5-dda9-4a82-b854-8405c43a6505}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Combat\Battle">
+      <UniqueIdentifier>{4396db13-739a-428b-8602-5a7a31f54a86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Combat\Weapon">
+      <UniqueIdentifier>{1ebd4001-0e8d-4740-8703-9656eba970c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Combat\SceneNode">
+      <UniqueIdentifier>{d2adff69-5436-4559-8c1d-437e7bd6e535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Combat\SceneNode\Bullet">
+      <UniqueIdentifier>{9b66ee8c-85e9-450a-8c4e-47d51dffa88b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Combat\SceneNode\Plane">
+      <UniqueIdentifier>{d7228b57-a9f1-40fe-987a-3804ed0b3a88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Template">
+      <UniqueIdentifier>{a4b5b93c-b678-4f4c-a6ec-6c732485b97f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Combat\SceneNode\Skills">
+      <UniqueIdentifier>{ad082750-0866-4a0e-bc5b-56ba3fc2ace6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\startMenu.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Manager\HeroInfoManager.cpp">
+      <Filter>src\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Combat\SceneNode\SceneNode.cpp">
+      <Filter>src\Combat\SceneNode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Combat\Weapon\Weapon.cpp">
+      <Filter>src\Combat\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Combat\Battle\Battle.cpp">
+      <Filter>src\Combat\Battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Combat\Scene\GameScene.cpp">
+      <Filter>src\Combat\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Combat\SceneNode\Bullet\Bullet.cpp">
+      <Filter>src\Combat\SceneNode\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Manager\SelectedLevelManager.cpp">
+      <Filter>src\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Combat\SceneNode\Plane\Hero.cpp">
+      <Filter>src\Combat\SceneNode\Plane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Combat\Scene\Level1.cpp">
+      <Filter>src\Combat\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Combat\Scene\GameLayer.cpp">
+      <Filter>src\Combat\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Combat\SceneNode\Bullet\BulletNormal.cpp">
+      <Filter>src\Combat\SceneNode\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Manager\CombatManager.cpp">
+      <Filter>src\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Combat\SceneNode\Plane\AirPlane.cpp">
+      <Filter>src\Combat\SceneNode\Plane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Combat\SceneNode\Plane\PlaneEnemy.cpp">
+      <Filter>src\Combat\SceneNode\Plane</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\startMenu.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Manager\HeroInfoManager.h">
+      <Filter>src\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Template\SingletonT.h">
+      <Filter>src\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Combat\SceneNode\SceneNode.h">
+      <Filter>src\Combat\SceneNode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Combat\Weapon\Weapon.h">
+      <Filter>src\Combat\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Combat\Battle\Battle.h">
+      <Filter>src\Combat\Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Combat\Scene\GameScene.h">
+      <Filter>src\Combat\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Combat\SceneNode\Bullet\Bullet.h">
+      <Filter>src\Combat\SceneNode\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Manager\SelectedLevelManager.h">
+      <Filter>src\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Combat\SceneNode\Plane\Hero.h">
+      <Filter>src\Combat\SceneNode\Plane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Combat\Scene\Level1.h">
+      <Filter>src\Combat\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Combat\Scene\GameLayer.h">
+      <Filter>src\Combat\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Combat\SceneNode\Bullet\BulletNormal.h">
+      <Filter>src\Combat\SceneNode\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Manager\CombatManager.h">
+      <Filter>src\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Combat\SceneNode\Plane\AirPlane.h">
+      <Filter>src\Combat\SceneNode\Plane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Combat\SceneNode\Plane\PlaneEnemy.h">
+      <Filter>src\Combat\SceneNode\Plane</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\QSanguosha-Taqing.zip" />
+  </ItemGroup>
+</Project>
