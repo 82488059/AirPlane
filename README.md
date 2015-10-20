@@ -1,2 +1,1 @@
-# AirPlane
-打飞机
+#cocos_airplane
