@@ -54,6 +54,7 @@ void GameLayer::UpdateEnemy(float dt)
 	{
 		if ((*it)->IsDeath())
 		{
+            
 			m_enemyList.erase(it++);
 		}
 		else
@@ -85,6 +86,7 @@ void GameLayer::UpdateBullet(float dt)
 	{
 		if ((*it)->IsDeath())
 		{
+            (*it)->removeFromParent();
 			m_heroBulletList.erase(it++);
 		}
 		else
@@ -103,6 +105,7 @@ void GameLayer::UpdateBullet(float dt)
 	{
 		if ((*it)->IsDeath())
 		{
+            (*it)->removeFromParent();
 			m_enemyBulletList.erase(it++);
 		}
 		else

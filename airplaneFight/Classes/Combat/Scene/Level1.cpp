@@ -30,7 +30,6 @@ bool Level1::init()
 
 void Level1::Update(float dt)
 {
+    GameLayer::Update(dt);
     m_runTime += dt;
-
-
 }

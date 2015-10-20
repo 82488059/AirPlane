@@ -10,13 +10,11 @@ class Level1 :
 // create
 public:
     CREATE_FUNC(Level1);
-// virtual 
+// override 
 public:
-    virtual bool init();
-// new 
-public:
+    virtual bool init() override;
     // Ë¢ÐÂ
-    void Update(float dt);
+    virtual void Update(float dt) override;
 
 private:
     float m_runTime;

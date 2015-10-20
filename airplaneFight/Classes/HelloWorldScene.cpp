@@ -64,13 +64,33 @@ bool HelloWorld::init()
     this->addChild(label, 1);
 
     // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
+    auto sprite1 = Sprite::create("HelloWorld.png");
+	sprite1->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+	auto sprite2 = Sprite::create("Icon-72.png");
+	sprite2->setPosition(sprite1->getContentSize().width / 2, sprite1->getContentSize().height / 2);
+	auto sprite3 = Sprite::create("Icon-Small.png");
+	sprite3->setPosition(sprite2->getContentSize().width / 2, sprite2->getContentSize().height / 2);
+	sprite1->addChild(sprite2, 1);
+	sprite2->addChild(sprite3, 2);
+	addChild(sprite1, 0);
 
-    // position the sprite on the center of the screen
-    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+	auto s = getContentSize();
+	auto s1 = sprite1->getContentSize();
+	auto s2 = sprite2->getContentSize();
+	auto s3 = sprite3->getContentSize();
+
+	auto p1 = sprite1->getPosition();
+	auto p2 = sprite2->getPosition();
+	auto p3 = sprite3->getPosition();
+	auto p21 = sprite1->convertToWorldSpace(p2);
+	auto p31 = sprite1->convertToWorldSpace(p3);
+	auto p32 = sprite2->convertToWorldSpace(p3);
+
+	// position the sprite on the center of the screen
+    
 
     // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
+    
     
     return true;
 }

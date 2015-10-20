@@ -6,14 +6,19 @@ class AirPlane;
 class Bullet :
     public SceneNode
 {
+// override 
 public:
-    Bullet();
-    virtual ~Bullet();
-	virtual bool HitTest(AirPlane* plane, float dt);
+    virtual bool HitTest(AirPlane* plane, float dt) override;
+
+public:
 	int GetAP() const {
 		return m_ap;
 	}
 private:
-	int m_ap;
+    int m_ap; 
+
+public:
+    Bullet();
+    virtual ~Bullet();
 };
 

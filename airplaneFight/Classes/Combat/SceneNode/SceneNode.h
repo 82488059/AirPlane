@@ -1,28 +1,32 @@
 #ifndef __SCENENODE_H__
 #define __SCENENODE_H__
 #include "cocos2d.h"
-// 战场中的各种对像基类
-
+class Bullet;
+class AirPlane;
 class GameLayer;
+
+// 战场中的各种对像基类
 class SceneNode :
     public cocos2d::Sprite
 {
+// override
 public:
-	bool IsDeath()
-	{
-		return m_bIsDeath;
-	}
+    virtual bool init() override;
+
+// virtual
+public:
+    virtual bool IsDeath();
+    virtual void Update(float dt);
+    virtual void Moving(float dt);
+    // 受攻击
+    virtual bool Hurt(Bullet* pBullet); // {return false; }
+    // 攻击
+    virtual bool HitTest(AirPlane* plane, float dt);// { return false; }
+
+public:
 	void SetDeath()
 	{
 		m_bIsDeath = true;
-	}
-	virtual void Update(float dt)
-	{
-		Moving(dt);
-	}
-	virtual void Moving(float dt)
-	{
-		this->setPosition(getPosition()+dt*GetSpeed());
 	}
 	void SetSpeed(const cocos2d::Point& speed)
 	{
@@ -32,7 +36,6 @@ public:
 	{
 		return m_speed;
 	}
-public:
 	// 
 	void SetLayer(GameLayer* pLayer)
 	{

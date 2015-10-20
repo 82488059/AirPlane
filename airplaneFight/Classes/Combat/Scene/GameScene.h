@@ -14,7 +14,7 @@ public:
     CREATE_FUNC(GameScene);
 // virtual 
 public:
-    virtual bool init();
+    virtual bool init() override;
 // new 
 public:
     // Ë¢ÐÂ

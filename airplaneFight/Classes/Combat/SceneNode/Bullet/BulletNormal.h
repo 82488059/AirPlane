@@ -5,12 +5,15 @@ class BulletNormal :
     public Bullet
 {
 public:
-    BulletNormal();
-    virtual ~BulletNormal();
     CREATE_FUNC(BulletNormal);
-    virtual bool init();
+// override
+public:
+    virtual bool init() override;
+
 private:
     
-
+public:
+    BulletNormal();
+    virtual ~BulletNormal();
 };
 

@@ -7,14 +7,11 @@ class Hero :
 	public AirPlane
 {
 public:
-    Hero();
-    virtual ~Hero();
-public:
     CREATE_FUNC(Hero);
+// override 
 public:
-    virtual bool init();
-public:
-    void Update(float dt);
+    virtual bool init() override;
+    virtual void Update(float dt) override;
 
 
 private:
@@ -22,5 +19,8 @@ private:
     float m_runTime;
 	//ÒÆ¶¯ËÙ¶È
 	int m_nRapidity;
+public:
+    Hero();
+    virtual ~Hero();
 };
 

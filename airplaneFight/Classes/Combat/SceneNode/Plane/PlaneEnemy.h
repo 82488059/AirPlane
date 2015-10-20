@@ -7,19 +7,18 @@ class PlaneEnemy :
 	public AirPlane
 {
 public:
-    PlaneEnemy();
-    virtual ~PlaneEnemy();
-public:
     CREATE_FUNC(PlaneEnemy);
+// override
 public:
-    virtual bool init();
-public:
-    void Update(float dt);
+    virtual bool init() override;
+    virtual void Update(float dt) override;
     
-
 
 private:
     // 时间计数
     float m_runTime;
+public:
+    PlaneEnemy();
+    virtual ~PlaneEnemy();
 };
 

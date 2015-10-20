@@ -24,7 +24,7 @@ bool Hero::init()
     }
     auto bgSprite = Sprite::create("plane1.png");
     bgSprite->setPosition(0, 0);
-    addChild(bgSprite, 1, "Hero");
+    addChild(bgSprite, 0, "Hero");
 
 
     GetHeroInfoManager()->GetWeapon();

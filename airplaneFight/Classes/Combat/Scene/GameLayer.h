@@ -18,21 +18,24 @@ class GameLayer :
 // create
 public:
     CREATE_FUNC(GameLayer);
-// virtual 
+// override 
 public:
-    virtual bool init();
-// new 
+    virtual bool init() override;
+// vritual
 public:
     // 刷新
-    void Update(float dt);
+    virtual void Update(float dt);
+    // 出怪
+    virtual void ProductEnemy(float dt);
+
+// new 
+public:
 	void UpdateHero(float dt);
 	void UpdateEnemy(float dt);
 	void UpdateBullet(float dt);
 	// 子弹 
 	void AddHeroBullet(Bullet* pB);
 	void AddEnemyBullet(Bullet* pB);
-	// 出怪
-    virtual void ProductEnemy(float dt);
 
 protected:
 	void onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event);
