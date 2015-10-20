@@ -37,7 +37,7 @@ void PlaneEnemy::Update(float dt)
         Bullet* pB = BulletNormal::create();
         pB->setPosition(this->getPosition());
 		pB->SetSpeed(Point(0, -10));
-		m_pGameLayer->AddHeroBullet(pB);
+		m_pGameLayer->AddEnemyBullet(pB);
 
     }
 }

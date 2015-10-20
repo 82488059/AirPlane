@@ -2,6 +2,7 @@
 #define __SCENENODE_H__
 #include "cocos2d.h"
 // 战场中的各种对像基类
+
 class GameLayer;
 class SceneNode :
     public cocos2d::Sprite
@@ -9,7 +10,11 @@ class SceneNode :
 public:
 	bool IsDeath()
 	{
-		return false;
+		return m_bIsDeath;
+	}
+	void SetDeath()
+	{
+		m_bIsDeath = true;
 	}
 	virtual void Update(float dt)
 	{
@@ -25,13 +30,17 @@ public:
 	}
 	const cocos2d::Point& GetSpeed() const
 	{
-		return m_speed;			 
+		return m_speed;
 	}
 public:
 	// 
 	void SetLayer(GameLayer* pLayer)
 	{
 		m_pGameLayer = pLayer;
+	}
+	GameLayer* GetLayer()
+	{
+		return m_pGameLayer;
 	}
 protected:
 	// 战场

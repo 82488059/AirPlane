@@ -19,16 +19,16 @@ bool startMenu::init()
 		return false;
 	}
 	//¼ÓÔØÒôĞ§
-	CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("music/menuMusic.mp3");
+	CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("menuMusic.mp3");
 	auto size = Director::getInstance()->getVisibleSize();
 	auto origin = Director::getInstance()->getVisibleOrigin();
 	//Ìí¼Ó±³¾°
-	auto bgSprite = Sprite::create("image/img_bg_logo.jpg");
+	auto bgSprite = Sprite::create("img_bg_logo.jpg");
 	bgSprite->setPosition(size.width/2, size.height/2);
 	addChild(bgSprite);
 
 	//Ìí¼Ó±³¾°×°ÊÎ
-	auto bgLoGo = Sprite::create("image/LOGO.png");
+	auto bgLoGo = Sprite::create("LOGO.png");
 	bgLoGo->setScale(0.5);
 	bgLoGo->setPosition(size.width/2, size.height* 3/4);
 	addChild(bgLoGo);
@@ -73,5 +73,5 @@ void startMenu::menuSettingGame(Ref* pSender)
 
 void startMenu::menuExitGame(cocos2d::Ref *pSend)
 {
-
+	Director::getInstance()->end();
 }

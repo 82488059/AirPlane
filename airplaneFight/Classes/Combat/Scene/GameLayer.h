@@ -1,10 +1,11 @@
 #include "cocos2d.h"
-#include "Combat\SceneNode\Plane\Hero.h"
+
 
 USING_NS_CC;
 
 class AirPlane;
 class Bullet;
+class Hero;
 typedef std::list<AirPlane*> EnemyList;
 typedef std::list<Bullet*> EnemyBulletList;
 typedef std::list<Bullet*> HeroBulletList;
@@ -48,8 +49,7 @@ public:
     virtual ~GameLayer();
 
 private:
-	void moveStart(float dt);
-	void heroMove(DIRECTION direction);
+	void HeroMove(float dt);
 
 private:
 	int m_nKeyPressed;

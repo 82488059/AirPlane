@@ -21,6 +21,7 @@ bool Bullet::HitTest(AirPlane* plane, float dt)
 	if (-10. < test.x && test.x < 10. && -10. < test.y && test.y < 10.)
 	{
 		plane->Hurt(this);
+		SetDeath();
 		return true;
 	}
 

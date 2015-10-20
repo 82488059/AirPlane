@@ -7,8 +7,7 @@ USING_NS_CC;
 
 Hero::Hero()
 :m_runTime(0),
-m_nRapidity(3),
-m_eMoveDirection(nodirection)
+m_nRapidity(3)
 {
 }
 
@@ -25,7 +24,7 @@ bool Hero::init()
     }
     auto bgSprite = Sprite::create("plane1.png");
     bgSprite->setPosition(0, 0);
-    addChild(bgSprite);
+    addChild(bgSprite, 1, "Hero");
 
 
     GetHeroInfoManager()->GetWeapon();
@@ -43,26 +42,5 @@ void Hero::Update(float dt)
         Bullet* pB = BulletNormal::create();
         pB->setPosition(this->getPosition());
 		m_pGameLayer->AddHeroBullet(pB);
-
     }
-}
-
-int Hero::getHeroRapidity()
-{
-	return m_nRapidity;
-}
-
-void Hero::setHeroRapidity(int nRapidity)
-{
-	m_nRapidity = nRapidity;
-}
-
-DIRECTION Hero::getHeroDirection()
-{
-	return m_eMoveDirection;
-}
-
-void Hero::setHeroDirection(DIRECTION direction)
-{
-	m_eMoveDirection = direction;
 }
