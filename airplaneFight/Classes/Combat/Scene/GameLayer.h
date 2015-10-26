@@ -2,7 +2,7 @@
 
 
 USING_NS_CC;
-
+class SceneNode;
 class AirPlane;
 class Bullet;
 class Hero;
@@ -27,7 +27,8 @@ public:
     virtual void Update(float dt);
     // 出怪
     virtual void ProductEnemy(float dt);
-
+    // 矩形在地图内返回true
+    virtual bool IsInMap(const SceneNode& node);
 // new 
 public:
 	void UpdateHero(float dt);
@@ -36,6 +37,9 @@ public:
 	// 子弹 
 	void AddHeroBullet(Bullet* pB);
 	void AddEnemyBullet(Bullet* pB);
+	//设置地图速度
+	void SetBGSpeed(int nSpeed){ m_nbgSpeed = nSpeed; }
+	int GetBGSpeed(){ return m_nbgSpeed; }
 
 protected:
 	void onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event);
@@ -46,6 +50,8 @@ protected:
     Hero* m_pHero;
 	EnemyBulletList m_enemyBulletList;
 	HeroBulletList m_heroBulletList;
+	//地图移动速度
+	int m_nbgSpeed;
 //
 public:
     GameLayer(); 

@@ -1,5 +1,6 @@
 #include "GameScene.h"
 #include "Level1.h"
+#include "RockerHandle.h"
 
 USING_NS_CC;
 
@@ -38,6 +39,8 @@ bool GameScene::init()
 
     m_gameLayer = Level1::create();
     addChild(m_gameLayer, 1);
+	m_pRockerHandle = RockerHandle::create();
+	addChild(m_pRockerHandle, 2);
 
     this->schedule(schedule_selector(GameScene::Update));
 

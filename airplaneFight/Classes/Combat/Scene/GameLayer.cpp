@@ -7,7 +7,8 @@
 GameLayer::GameLayer()
 : m_pHero(NULL),
 m_nKeyPressed(0),
-m_bIsPressed(false)
+m_bIsPressed(false),
+m_nbgSpeed(1)
 {
 }
 
@@ -24,7 +25,7 @@ bool GameLayer::init()
 	}
 	m_pHero = Hero::create();
 	m_pHero->setPosition(Director::getInstance()->getVisibleSize().width / 2, 50);
-	addChild(m_pHero, 1);
+	addChild(m_pHero, 2);
 	m_pHero->SetLayer(this);
 	GetCombatManager()->SetRunGameLayer(this);
 
@@ -52,9 +53,8 @@ void GameLayer::UpdateEnemy(float dt)
 {
 	for (auto it = m_enemyList.begin(); it != m_enemyList.end(); /*++it*/)
 	{
-		if ((*it)->IsDeath())
+        if ((*it)->IsDeath() || !IsInMap(**it))
 		{
-            
 			m_enemyList.erase(it++);
 		}
 		else
@@ -71,7 +71,7 @@ void GameLayer::UpdateBullet(float dt)
     {
         for (auto enemy = m_enemyList.begin(); enemy != m_enemyList.end(); ++enemy)
         {
-            if (!(*enemy)->IsDeath())
+            if (!(*enemy)->IsDeath() || !IsInMap(**it))
             {
                 if ((*it)->HitTest(*enemy, dt))
                 {
@@ -84,7 +84,7 @@ void GameLayer::UpdateBullet(float dt)
     }
 	for (auto it = m_heroBulletList.begin(); it != m_heroBulletList.end(); /*++it*/)
 	{
-		if ((*it)->IsDeath())
+        if ((*it)->IsDeath() || !IsInMap(**it))
 		{
             (*it)->removeFromParent();
 			m_heroBulletList.erase(it++);
@@ -103,7 +103,7 @@ void GameLayer::UpdateBullet(float dt)
     }
 	for (auto it = m_enemyBulletList.begin(); it != m_enemyBulletList.end(); /*++it*/)
 	{
-		if ((*it)->IsDeath())
+		if ((*it)->IsDeath() || !IsInMap (**it))
 		{
             (*it)->removeFromParent();
 			m_enemyBulletList.erase(it++);
@@ -127,6 +127,22 @@ void GameLayer::ProductEnemy(float dt)
 		m_enemyList.push_back(pAP);
 	}
 }
+
+bool GameLayer::IsInMap(const SceneNode& node)
+{
+    static Size size = Director::getInstance()->getVisibleSize();
+    Rect rect = node.getTextureRect();
+    Point p = node.getPosition();
+
+    if (rect.getMaxX () < 0 || rect.getMinX () > size.width
+        || rect.getMinY() > size.height || rect.getMaxY () < 0)
+    {
+        return false;
+    }
+
+    return true;
+}
+
 void GameLayer::AddHeroBullet(Bullet* pB)
 {
 	this->addChild(pB, 3);
@@ -264,7 +280,7 @@ void GameLayer::HeroMove(float dt)
 {
 	auto heroCurrentPos = m_pHero->getPosition();
 	auto size = Director::getInstance()->getVisibleSize();
-	auto heroSize = m_pHero->getChildByName("Hero")->getContentSize();
+	auto heroSize = m_pHero->/*getChildByName("Hero")->*/getContentSize();
 	if (m_pHero->GetSpeed().x < 0)
 	{
 		if (heroCurrentPos.x - heroSize.width / 2 < 0)

@@ -152,6 +152,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\Combat\SceneNode\Plane\PlaneEnemy.cpp" />
     <ClCompile Include="..\Classes\Combat\Scene\GameLayer.cpp" />
     <ClCompile Include="..\Classes\Combat\Scene\Level1.cpp" />
+    <ClCompile Include="..\Classes\Combat\Scene\RockerHandle.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\Manager\CombatManager.cpp" />
     <ClCompile Include="..\Classes\Manager\HeroInfoManager.cpp" />
@@ -171,6 +172,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Combat\SceneNode\Plane\PlaneEnemy.h" />
     <ClInclude Include="..\Classes\Combat\Scene\GameLayer.h" />
     <ClInclude Include="..\Classes\Combat\Scene\Level1.h" />
+    <ClInclude Include="..\Classes\Combat\Scene\RockerHandle.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\Manager\CombatManager.h" />
     <ClInclude Include="..\Classes\Manager\HeroInfoManager.h" />

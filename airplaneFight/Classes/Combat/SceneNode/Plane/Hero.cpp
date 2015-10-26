@@ -22,10 +22,12 @@ bool Hero::init()
     {
         return false;
     }
-    auto bgSprite = Sprite::create("plane1.png");
-    bgSprite->setPosition(0, 0);
-    addChild(bgSprite, 0, "Hero");
+//     auto bgSprite = Sprite::create("plane1.png");
+//     bgSprite->setPosition(0, 0);
+//     addChild(bgSprite, 0, "Hero");
 
+    CCTexture2D* tex = CCTextureCache::getInstance()->addImage("plane1.png");
+    this->initWithTexture(tex);
 
     GetHeroInfoManager()->GetWeapon();
 

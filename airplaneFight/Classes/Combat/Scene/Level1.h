@@ -17,8 +17,11 @@ public:
     virtual void Update(float dt) override;
 
 private:
-    float m_runTime;
+	void MovebgSprite();
 
+private:
+    float m_runTime;
+	
 //
 public:
     Level1();

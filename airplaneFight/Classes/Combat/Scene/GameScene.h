@@ -3,6 +3,7 @@
 #include "cocos2d.h"
 
 class GameLayer;
+class RockerHandle;
 // ”Œœ∑≥°æ∞
 class GameScene :
     public cocos2d::Layer
@@ -23,6 +24,7 @@ public:
 private:
     float m_runTime;
     GameLayer* m_gameLayer;
+	RockerHandle *m_pRockerHandle;
 //
 public:
     GameScene();

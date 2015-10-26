@@ -19,10 +19,10 @@ bool PlaneEnemy::init()
     {
         return false;
     }
-    auto bgSprite = Sprite::create("plane11.png");
-	bgSprite->setRotation(180);
-    bgSprite->setPosition(0, 0);
-    addChild(bgSprite);
+    CCTexture2D* tex = CCTextureCache::getInstance()->addImage("plane11.png");
+    this->initWithTexture(tex);
+    //this->setRotation(180);
+    //this->setTexture(tex);
 
     return true;
 }

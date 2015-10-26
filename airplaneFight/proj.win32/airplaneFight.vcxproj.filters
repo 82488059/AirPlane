@@ -96,6 +96,9 @@
     <ClCompile Include="..\Classes\Combat\SceneNode\Plane\PlaneEnemy.cpp">
       <Filter>src\Combat\SceneNode\Plane</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Combat\Scene\RockerHandle.cpp">
+      <Filter>src\Combat\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -154,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Combat\SceneNode\Plane\PlaneEnemy.h">
       <Filter>src\Combat\SceneNode\Plane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Combat\Scene\RockerHandle.h">
+      <Filter>src\Combat\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

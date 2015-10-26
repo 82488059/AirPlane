@@ -16,6 +16,7 @@ private:
 	// a selector callback
 	void menuStartGame(cocos2d::Ref* pSender);
 	void menuSettingGame(cocos2d::Ref *pSender);
+	void startMenu::menuScore(cocos2d::Ref *pSend);
 	void menuExitGame(cocos2d::Ref *pSend);
 	// implement the "static create()" method manually
 	CREATE_FUNC(startMenu);

@@ -83,8 +83,9 @@ bool HelloWorld::init()
 	auto p2 = sprite2->getPosition();
 	auto p3 = sprite3->getPosition();
 	auto p21 = sprite1->convertToWorldSpace(p2);
-	auto p31 = sprite1->convertToWorldSpace(p3);
+	auto p21ar = sprite1->convertToWorldSpaceAR(p2);
 	auto p32 = sprite2->convertToWorldSpace(p3);
+	auto p32ar = sprite2->convertToWorldSpaceAR(p3);
 
 	// position the sprite on the center of the screen
     

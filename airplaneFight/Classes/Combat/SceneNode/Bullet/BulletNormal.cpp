@@ -17,9 +17,10 @@ bool BulletNormal::init()
     {
         return false;
     }
-    Sprite* sp = Sprite::create("heroBullet.png");
-    sp->setPosition(0., 0.);
-    addChild(sp);
-
+//     Sprite* sp = Sprite::create("heroBullet.png");
+//     sp->setPosition(0., 0.);
+//     addChild(sp);
+    CCTexture2D* tex = CCTextureCache::getInstance()->addImage("heroBullet.png");
+    this->initWithTexture(tex);
     return true;
 }
