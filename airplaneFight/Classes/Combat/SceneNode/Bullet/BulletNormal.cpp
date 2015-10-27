@@ -20,7 +20,8 @@ bool BulletNormal::init()
 //     Sprite* sp = Sprite::create("heroBullet.png");
 //     sp->setPosition(0., 0.);
 //     addChild(sp);
-    CCTexture2D* tex = CCTextureCache::getInstance()->addImage("heroBullet.png");
+    Texture2D* tex = Director::getInstance()->getTextureCache()->addImage("heroBullet.png");
+    //Texture2D* tex = TextureCache::getInstance()->addImage("heroBullet.png");
     this->initWithTexture(tex);
     return true;
 }

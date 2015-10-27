@@ -20,6 +20,10 @@ private:
 
 
 protected:
+    void SetHp(int hp)
+    {
+        m_hp = hp;
+    }
 #if _USE_TEST_PLANE_
     cocos2d::LabelTTF* m_pShowHp;
 

@@ -6,6 +6,7 @@ USING_NS_CC;
 PlaneEnemy::PlaneEnemy()
 :m_runTime(0)
 {
+    SetHp(1);// = 1;
 }
 
 
@@ -19,7 +20,8 @@ bool PlaneEnemy::init()
     {
         return false;
     }
-    CCTexture2D* tex = CCTextureCache::getInstance()->addImage("plane11.png");
+    Texture2D* tex = Director::getInstance()->getTextureCache()->addImage("enemy11.png");
+    //Texture2D* tex = TextureCache::getInstance()->addImage("enemy11.png");
     this->initWithTexture(tex);
     //this->setRotation(180);
     //this->setTexture(tex);
@@ -29,15 +31,15 @@ bool PlaneEnemy::init()
 
 void PlaneEnemy::Update(float dt)
 {
+    AirPlane::Update(dt);
     m_runTime += dt;
-
-    if (m_runTime > 1.f)
+    if (m_runTime > 3.f)
     {
-        m_runTime -= 1.f;
+        m_runTime -= 3.f;
         Bullet* pB = BulletNormal::create();
+        pB->setRotation(180);
         pB->setPosition(this->getPosition());
-		pB->SetSpeed(Point(0, -10));
+		pB->SetSpeed(Point(0, -100));
 		m_pGameLayer->AddEnemyBullet(pB);
-
     }
 }

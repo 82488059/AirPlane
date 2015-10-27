@@ -38,9 +38,9 @@ bool GameScene::init()
     }
 
     m_gameLayer = Level1::create();
-    addChild(m_gameLayer, 1);
+    addChild(m_gameLayer, 1, "gameLayer");
 	m_pRockerHandle = RockerHandle::create();
-	addChild(m_pRockerHandle, 2);
+	addChild(m_pRockerHandle, 2, "rockerHandle");
 
     this->schedule(schedule_selector(GameScene::Update));
 

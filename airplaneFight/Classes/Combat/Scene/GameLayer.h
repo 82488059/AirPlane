@@ -40,6 +40,9 @@ public:
 	//设置地图速度
 	void SetBGSpeed(int nSpeed){ m_nbgSpeed = nSpeed; }
 	int GetBGSpeed(){ return m_nbgSpeed; }
+	Hero *GetHero();
+	void RockerMoveHero();
+	void RockerStopMoveHero();
 
 protected:
 	void onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event);

@@ -15,6 +15,8 @@ public:
     virtual bool init() override;
     // Ë¢ÐÂ
     virtual void Update(float dt) override;
+    //
+    virtual void ProductEnemy(float dt) override;
 
 private:
 	void MovebgSprite();

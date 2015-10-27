@@ -1,4 +1,6 @@
 #include "Level1.h"
+#include "PlaneEnemy.h"
+
 USING_NS_CC;
 
 Level1::Level1()
@@ -57,4 +59,27 @@ void Level1::MovebgSprite()
 	{
 		bgSprite2->setPosition(size.width / 2, bgS1Point.y + bgSize.height - m_nbgSpeed);
 	}
+}
+
+// ณ๖นึ
+
+void Level1::ProductEnemy(float dt)
+{
+    static Size size = Director::getInstance()->getVisibleSize();
+
+    if (m_enemyList.size () < 10)
+    {
+        int x = rand() % (int)(size.width);
+        int y = 320 - (rand() % 100);
+
+        AirPlane* pAP = PlaneEnemy::create();
+        pAP->setPosition(x, y);
+        float xx = (size.width/2 - x)/30;
+
+        pAP->SetSpeed(Point(xx, -20));
+
+        this->addChild(pAP, 1, "enemy");
+        pAP->SetLayer(this);
+        m_enemyList.push_back(pAP);
+    }
 }

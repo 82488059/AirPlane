@@ -55,6 +55,7 @@ void GameLayer::UpdateEnemy(float dt)
 	{
         if ((*it)->IsDeath() || !IsInMap(**it))
 		{
+            (*it)->removeFromParent();
 			m_enemyList.erase(it++);
 		}
 		else
@@ -133,7 +134,7 @@ bool GameLayer::IsInMap(const SceneNode& node)
     static Size size = Director::getInstance()->getVisibleSize();
     Rect rect = node.getTextureRect();
     Point p = node.getPosition();
-
+    rect.origin = p;
     if (rect.getMaxX () < 0 || rect.getMinX () > size.width
         || rect.getMinY() > size.height || rect.getMaxY () < 0)
     {
@@ -280,35 +281,60 @@ void GameLayer::HeroMove(float dt)
 {
 	auto heroCurrentPos = m_pHero->getPosition();
 	auto size = Director::getInstance()->getVisibleSize();
-	auto heroSize = m_pHero->/*getChildByName("Hero")->*/getContentSize();
-	if (m_pHero->GetSpeed().x < 0)
+	auto heroSize = m_pHero->getContentSize();
+	if (m_pHero->GetSpeed().x <= 0 && m_pHero->GetSpeed().y <= 0)
 	{
-		if (heroCurrentPos.x - heroSize.width / 2 < 0)
+		if (heroCurrentPos.x - heroSize.width / 2 < 0 || heroCurrentPos.y - heroSize.height / 2 < 0)
 		{
 			return;
 		}
 	}
-	else if (m_pHero->GetSpeed().x > 0)
+	else if(m_pHero->GetSpeed().x <= 0 && m_pHero->GetSpeed().y > 0)
 	{
-		if (heroCurrentPos.x + heroSize.width / 2 > size.width)
+		if (heroCurrentPos.x - heroSize.width / 2 < 0 || heroCurrentPos.y + heroSize.height / 2 > size.height)
 		{
 			return;
 		}
 	}
-	else if (m_pHero->GetSpeed().y > 0)
+	else if (m_pHero->GetSpeed().x > 0 && m_pHero->GetSpeed().y <= 0)
 	{
-		if (heroCurrentPos.y + heroSize.height / 2 > size.height)
+		if (heroCurrentPos.x + heroSize.width / 2 > size.width || heroCurrentPos.y - heroSize.height / 2 < 0)
 		{
 			return;
 		}
 	}
-	else if (m_pHero->GetSpeed().y < 0)
+	else if (m_pHero->GetSpeed().x > 0 && m_pHero->GetSpeed().y > 0)
 	{
-		if (heroCurrentPos.y - heroSize.height / 2 < 0)
+		if (heroCurrentPos.x + heroSize.width / 2 > size.width || heroCurrentPos.y + heroSize.height / 2 > size.height)
 		{
 			return;
 		}
-
+	}
+	else
+	{
+		return;
 	}
 	m_pHero->Moving(dt);
+}
+
+Hero *GameLayer::GetHero()
+{
+	if (NULL != m_pHero)
+	{
+		return m_pHero;
+	}
+	else
+	{
+		return NULL;
+	}
+}
+
+void GameLayer::RockerMoveHero()
+{
+	schedule(CC_SCHEDULE_SELECTOR(GameLayer::HeroMove));
+}
+
+void GameLayer::RockerStopMoveHero()
+{
+	unschedule(CC_SCHEDULE_SELECTOR(GameLayer::HeroMove));
 }

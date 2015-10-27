@@ -22,7 +22,9 @@ bool AirPlane::init()
         return false;
     }
 #if _USE_TEST_PLANE_
-    m_pShowHp = LabelTTF::create("10000", "Arial", 10, Size(0,0));
+    char strHp[6] = {0};
+    sprintf(strHp, "%d", m_hp);
+    m_pShowHp = LabelTTF::create(strHp, "Arial", 10, Size(0,0));
     this->addChild(m_pShowHp, 1);
 
 #endif
@@ -33,10 +35,14 @@ bool AirPlane::init()
 bool AirPlane::Hurt(Bullet* pBullet)
 {
 	m_hp -= pBullet->GetAP();
-    m_hp;
     char hp[6];
     sprintf(hp, "%d", m_hp);
     m_pShowHp->setString(hp);
+    if (m_hp<=0)
+    {
+        SetDeath();
+    }
+    
 	return true;
 
 }
